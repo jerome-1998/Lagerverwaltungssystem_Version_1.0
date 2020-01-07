@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LagerverwaltungModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BenutzerProfil">
+    <Key>
+      <PropertyRef Name="NutzerNr" />
+    </Key>
+    <Property Name="NutzerNr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NutzerName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Passwort" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="enthältKunde">
+    <Key>
+      <PropertyRef Name="KNR" />
+      <PropertyRef Name="SysNr" />
+    </Key>
+    <Property Name="KNR" Type="int" Nullable="false" />
+    <Property Name="SysNr" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="enthältLieferer">
+    <Key>
+      <PropertyRef Name="LNR" />
+      <PropertyRef Name="SysNr" />
+    </Key>
+    <Property Name="LNR" Type="int" Nullable="false" />
+    <Property Name="SysNr" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="enthältWaren">
+    <Key>
+      <PropertyRef Name="ANR" />
+      <PropertyRef Name="SysNr" />
+    </Key>
+    <Property Name="ANR" Type="int" Nullable="false" />
+    <Property Name="SysNr" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KAnsprechpartner">
+    <Key>
+      <PropertyRef Name="AnsprechPartnerNummer" />
+    </Key>
+    <Property Name="AnsprechPartnerNummer" Type="int" Nullable="false" />
+    <Property Name="AnspAnrede" Type="nvarchar" MaxLength="9" />
+    <Property Name="AnspVorname" Type="nvarchar" MaxLength="500" />
+    <Property Name="AnspNachname" Type="nvarchar" MaxLength="500" />
+    <Property Name="AnpsHandyNummer" Type="nvarchar" MaxLength="18" />
+    <Property Name="AnspTelefonnummer" Type="nvarchar" MaxLength="18" />
+    <Property Name="AnspEmail" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Kbeliefert">
+    <Key>
+      <PropertyRef Name="KNR" />
+      <PropertyRef Name="ANR" />
+    </Key>
+    <Property Name="KNR" Type="int" Nullable="false" />
+    <Property Name="ANR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kunde">
+    <Key>
+      <PropertyRef Name="KundenNr" />
+    </Key>
+    <Property Name="KundenNr" Type="int" Nullable="false" />
+    <Property Name="KundenName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PLZ" Type="nvarchar" MaxLength="20" />
+    <Property Name="Adresse" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ort" Type="nvarchar" MaxLength="250" />
+    <Property Name="Telefonnummer" Type="nvarchar" MaxLength="18" />
+    <Property Name="EmailaddresseBetrieb" Type="nvarchar" MaxLength="250" />
+    <Property Name="Website" Type="nvarchar" MaxLength="250" />
+    <Property Name="Ansprechpartner" Type="int" />
+  </EntityType>
+  <EntityType Name="LagerSystem">
+    <Key>
+      <PropertyRef Name="SystemNr" />
+    </Key>
+    <Property Name="SystemNr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lagername" Type="nvarchar" MaxLength="100" />
+    <Property Name="Nutzer" Type="int" />
+  </EntityType>
+  <EntityType Name="LAnsprechpartner">
+    <Key>
+      <PropertyRef Name="AnprechPartnerNummer" />
+    </Key>
+    <Property Name="AnprechPartnerNummer" Type="int" Nullable="false" />
+    <Property Name="AnspAnrede" Type="nvarchar" MaxLength="9" />
+    <Property Name="AnspVorname" Type="nvarchar" MaxLength="500" />
+    <Property Name="AnspNachname" Type="nvarchar" MaxLength="500" />
+    <Property Name="AnpsHandyNummer" Type="nvarchar" MaxLength="18" />
+    <Property Name="AnspTelefonnummer" Type="nvarchar" MaxLength="18" />
+    <Property Name="AnspEmail" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Lieferer">
+    <Key>
+      <PropertyRef Name="LiefererNR" />
+    </Key>
+    <Property Name="LiefererNR" Type="int" Nullable="false" />
+    <Property Name="LiefererName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PLZ" Type="nvarchar" MaxLength="20" />
+    <Property Name="Adresse" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ort" Type="nvarchar" MaxLength="250" />
+    <Property Name="Telefonnummer" Type="nvarchar" MaxLength="18" />
+    <Property Name="EmailaddresseBetrieb" Type="nvarchar" MaxLength="250" />
+    <Property Name="Website" Type="nvarchar" MaxLength="250" />
+    <Property Name="Ansprechpartner" Type="int" />
+  </EntityType>
+  <EntityType Name="Liefererliefert">
+    <Key>
+      <PropertyRef Name="LNR" />
+      <PropertyRef Name="ANR" />
+    </Key>
+    <Property Name="LNR" Type="int" Nullable="false" />
+    <Property Name="ANR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produkte">
+    <Key>
+      <PropertyRef Name="ProduktNummer" />
+    </Key>
+    <Property Name="ProduktNummer" Type="int" Nullable="false" />
+    <Property Name="ProduktName" Type="nvarchar" MaxLength="400" />
+    <Property Name="ProduktGruppe" Type="int" Nullable="false" />
+    <Property Name="ProduktWert" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Waren">
+    <Key>
+      <PropertyRef Name="ArtikelNr" />
+    </Key>
+    <Property Name="ArtikelNr" Type="int" Nullable="false" />
+    <Property Name="AktBestand" Type="int" />
+    <Property Name="Mindestbestand" Type="int" />
+    <Property Name="ABCGut" Type="char" MaxLength="1" />
+    <Property Name="ProduktNummer" Type="int" />
+  </EntityType>
+  <EntityType Name="Warenausgang">
+    <Key>
+      <PropertyRef Name="WarenausgangID" />
+    </Key>
+    <Property Name="WarenausgangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kunde" Type="nvarchar" MaxLength="250" />
+    <Property Name="Artikel" Type="nvarchar" MaxLength="250" />
+    <Property Name="Bestellmenge" Type="int" />
+  </EntityType>
+  <EntityType Name="Wareneingang">
+    <Key>
+      <PropertyRef Name="WareneingangID" />
+    </Key>
+    <Property Name="WareneingangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lieferer" Type="nvarchar" MaxLength="250" />
+    <Property Name="Artikel" Type="nvarchar" MaxLength="250" />
+    <Property Name="Bestellmenge" Type="int" />
+  </EntityType>
+  <Association Name="fkArtikel">
+    <End Role="Waren" Type="Self.Waren" Multiplicity="1" />
+    <End Role="Liefererliefert" Type="Self.Liefererliefert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Waren">
+        <PropertyRef Name="ArtikelNr" />
+      </Principal>
+      <Dependent Role="Liefererliefert">
+        <PropertyRef Name="ANR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkKunde">
+    <End Role="Kunde" Type="Self.Kunde" Multiplicity="1" />
+    <End Role="Kbeliefert" Type="Self.Kbeliefert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunde">
+        <PropertyRef Name="KundenNr" />
+      </Principal>
+      <Dependent Role="Kbeliefert">
+        <PropertyRef Name="KNR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkKundeAnsprechpartner">
+    <End Role="KAnsprechpartner" Type="Self.KAnsprechpartner" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kunde" Type="Self.Kunde" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KAnsprechpartner">
+        <PropertyRef Name="AnsprechPartnerNummer" />
+      </Principal>
+      <Dependent Role="Kunde">
+        <PropertyRef Name="Ansprechpartner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkkundesys">
+    <End Role="Kunde" Type="Self.Kunde" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="enthältKunde" Type="Self.enthältKunde" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunde">
+        <PropertyRef Name="KundenNr" />
+      </Principal>
+      <Dependent Role="enthältKunde">
+        <PropertyRef Name="KNR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkLieferer">
+    <End Role="Lieferer" Type="Self.Lieferer" Multiplicity="1" />
+    <End Role="Liefererliefert" Type="Self.Liefererliefert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lieferer">
+        <PropertyRef Name="LiefererNR" />
+      </Principal>
+      <Dependent Role="Liefererliefert">
+        <PropertyRef Name="LNR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkLiefererAnprechpartner">
+    <End Role="LAnsprechpartner" Type="Self.LAnsprechpartner" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Lieferer" Type="Self.Lieferer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LAnsprechpartner">
+        <PropertyRef Name="AnprechPartnerNummer" />
+      </Principal>
+      <Dependent Role="Lieferer">
+        <PropertyRef Name="Ansprechpartner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fklieferersys">
+    <End Role="Lieferer" Type="Self.Lieferer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="enthältLieferer" Type="Self.enthältLieferer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lieferer">
+        <PropertyRef Name="LiefererNR" />
+      </Principal>
+      <Dependent Role="enthältLieferer">
+        <PropertyRef Name="LNR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fknutzer">
+    <End Role="BenutzerProfil" Type="Self.BenutzerProfil" Multiplicity="0..1" />
+    <End Role="LagerSystem" Type="Self.LagerSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BenutzerProfil">
+        <PropertyRef Name="NutzerNr" />
+      </Principal>
+      <Dependent Role="LagerSystem">
+        <PropertyRef Name="Nutzer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkProdukt">
+    <End Role="Produkte" Type="Self.Produkte" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Waren" Type="Self.Waren" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produkte">
+        <PropertyRef Name="ProduktNummer" />
+      </Principal>
+      <Dependent Role="Waren">
+        <PropertyRef Name="ProduktNummer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fksyskunde">
+    <End Role="LagerSystem" Type="Self.LagerSystem" Multiplicity="1" />
+    <End Role="enthältKunde" Type="Self.enthältKunde" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LagerSystem">
+        <PropertyRef Name="SystemNr" />
+      </Principal>
+      <Dependent Role="enthältKunde">
+        <PropertyRef Name="SysNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fksyslieferer">
+    <End Role="LagerSystem" Type="Self.LagerSystem" Multiplicity="1" />
+    <End Role="enthältLieferer" Type="Self.enthältLieferer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LagerSystem">
+        <PropertyRef Name="SystemNr" />
+      </Principal>
+      <Dependent Role="enthältLieferer">
+        <PropertyRef Name="SysNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fksyswaren">
+    <End Role="LagerSystem" Type="Self.LagerSystem" Multiplicity="1" />
+    <End Role="enthältWaren" Type="Self.enthältWaren" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LagerSystem">
+        <PropertyRef Name="SystemNr" />
+      </Principal>
+      <Dependent Role="enthältWaren">
+        <PropertyRef Name="SysNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkWare">
+    <End Role="Waren" Type="Self.Waren" Multiplicity="1" />
+    <End Role="Kbeliefert" Type="Self.Kbeliefert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Waren">
+        <PropertyRef Name="ArtikelNr" />
+      </Principal>
+      <Dependent Role="Kbeliefert">
+        <PropertyRef Name="ANR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkwarensys">
+    <End Role="Waren" Type="Self.Waren" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="enthältWaren" Type="Self.enthältWaren" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Waren">
+        <PropertyRef Name="ArtikelNr" />
+      </Principal>
+      <Dependent Role="enthältWaren">
+        <PropertyRef Name="ANR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LagerverwaltungModelStoreContainer">
+    <EntitySet Name="BenutzerProfil" EntityType="Self.BenutzerProfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="enthältKunde" EntityType="Self.enthältKunde" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="enthältLieferer" EntityType="Self.enthältLieferer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="enthältWaren" EntityType="Self.enthältWaren" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KAnsprechpartner" EntityType="Self.KAnsprechpartner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kbeliefert" EntityType="Self.Kbeliefert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kunde" EntityType="Self.Kunde" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LagerSystem" EntityType="Self.LagerSystem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LAnsprechpartner" EntityType="Self.LAnsprechpartner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lieferer" EntityType="Self.Lieferer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Liefererliefert" EntityType="Self.Liefererliefert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produkte" EntityType="Self.Produkte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Waren" EntityType="Self.Waren" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Warenausgang" EntityType="Self.Warenausgang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Wareneingang" EntityType="Self.Wareneingang" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fkArtikel" Association="Self.fkArtikel">
+      <End Role="Waren" EntitySet="Waren" />
+      <End Role="Liefererliefert" EntitySet="Liefererliefert" />
+    </AssociationSet>
+    <AssociationSet Name="fkKunde" Association="Self.fkKunde">
+      <End Role="Kunde" EntitySet="Kunde" />
+      <End Role="Kbeliefert" EntitySet="Kbeliefert" />
+    </AssociationSet>
+    <AssociationSet Name="fkKundeAnsprechpartner" Association="Self.fkKundeAnsprechpartner">
+      <End Role="KAnsprechpartner" EntitySet="KAnsprechpartner" />
+      <End Role="Kunde" EntitySet="Kunde" />
+    </AssociationSet>
+    <AssociationSet Name="fkkundesys" Association="Self.fkkundesys">
+      <End Role="Kunde" EntitySet="Kunde" />
+      <End Role="enthältKunde" EntitySet="enthältKunde" />
+    </AssociationSet>
+    <AssociationSet Name="fkLieferer" Association="Self.fkLieferer">
+      <End Role="Lieferer" EntitySet="Lieferer" />
+      <End Role="Liefererliefert" EntitySet="Liefererliefert" />
+    </AssociationSet>
+    <AssociationSet Name="fkLiefererAnprechpartner" Association="Self.fkLiefererAnprechpartner">
+      <End Role="LAnsprechpartner" EntitySet="LAnsprechpartner" />
+      <End Role="Lieferer" EntitySet="Lieferer" />
+    </AssociationSet>
+    <AssociationSet Name="fklieferersys" Association="Self.fklieferersys">
+      <End Role="Lieferer" EntitySet="Lieferer" />
+      <End Role="enthältLieferer" EntitySet="enthältLieferer" />
+    </AssociationSet>
+    <AssociationSet Name="fknutzer" Association="Self.fknutzer">
+      <End Role="BenutzerProfil" EntitySet="BenutzerProfil" />
+      <End Role="LagerSystem" EntitySet="LagerSystem" />
+    </AssociationSet>
+    <AssociationSet Name="fkProdukt" Association="Self.fkProdukt">
+      <End Role="Produkte" EntitySet="Produkte" />
+      <End Role="Waren" EntitySet="Waren" />
+    </AssociationSet>
+    <AssociationSet Name="fksyskunde" Association="Self.fksyskunde">
+      <End Role="LagerSystem" EntitySet="LagerSystem" />
+      <End Role="enthältKunde" EntitySet="enthältKunde" />
+    </AssociationSet>
+    <AssociationSet Name="fksyslieferer" Association="Self.fksyslieferer">
+      <End Role="LagerSystem" EntitySet="LagerSystem" />
+      <End Role="enthältLieferer" EntitySet="enthältLieferer" />
+    </AssociationSet>
+    <AssociationSet Name="fksyswaren" Association="Self.fksyswaren">
+      <End Role="LagerSystem" EntitySet="LagerSystem" />
+      <End Role="enthältWaren" EntitySet="enthältWaren" />
+    </AssociationSet>
+    <AssociationSet Name="fkWare" Association="Self.fkWare">
+      <End Role="Waren" EntitySet="Waren" />
+      <End Role="Kbeliefert" EntitySet="Kbeliefert" />
+    </AssociationSet>
+    <AssociationSet Name="fkwarensys" Association="Self.fkwarensys">
+      <End Role="Waren" EntitySet="Waren" />
+      <End Role="enthältWaren" EntitySet="enthältWaren" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

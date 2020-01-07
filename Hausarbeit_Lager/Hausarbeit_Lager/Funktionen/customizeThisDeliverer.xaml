@@ -1,0 +1,223 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.customizeThisDeliverer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="customizeThisDeliverer" FontSize="30">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Name="ParentGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Bearbeite:" FontSize="40"></Label>
+        <Label Content="{Binding LiefererName}" Grid.Column="1" FontSize="40" Grid.ColumnSpan="2"></Label>
+
+        <Label Content="Lieferer Daten" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2"></Label>
+        <Label Content="Lieferernummer:*" Grid.Row="2" VerticalAlignment="Center"></Label>
+        <Label Content="Firmenname:*" Grid.Row="3" VerticalAlignment="Center"></Label>
+        <Label Content="PLZ:" Grid.Row="4" VerticalAlignment="Center"></Label>
+        <Label Content="Adresse:" Grid.Row="5" VerticalAlignment="Center"></Label>
+        <Label Content="Ort:" Grid.Row="6" VerticalAlignment="Center"></Label>
+        <Label Content="Telefonnummer:" Grid.Row="7" VerticalAlignment="Center"></Label>
+        <Label Content="Emailadresse:" Grid.Row="8" VerticalAlignment="Center"></Label>
+        <Label Content="Website:" Grid.Row="9" VerticalAlignment="Center"></Label>
+
+
+        <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="tblcustomizeDelivererDNummer" TextAlignment="Justify" Text="{Binding LiefererNR}">
+            <TextBlock.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBox MaxLength="250" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="tbxcustomizeDelivererDName" TextAlignment="Justify" Text="{Binding LiefererName}" TextChanged="TbxcustomizeDelivererDNummer_TextChanged">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="20" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="tbxcustomizeDelivererDPLZ" TextAlignment="Justify" Text="{Binding PLZ}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="200" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="tbxcustomizeDelivererDAddresse" TextAlignment="Justify" Text="{Binding Adresse}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="tbxcustomizeDelivererDOrt" TextAlignment="Justify" Text="{Binding Ort}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="18" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="tbxcustomizeDelivererDTelefon" TextAlignment="Justify" Text="{Binding Telefonnummer}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="tbxcustomizeDelivererDEmail" TextAlignment="Justify" Text="{Binding EmailaddresseBetrieb}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="tbxcustomizeDelivererDWebsite" TextAlignment="Justify" Text="{Binding Website}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+
+
+        <Label Grid.Column="2" Grid.Row="1" Margin="0 0" Content="Ansprechpartner" Grid.ColumnSpan="2" FontWeight="Bold"></Label>
+        <Label Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Content="AnsprechpartnerID:*"></Label>
+        <Label Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Content="Anrede:"></Label>
+        <Label Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" Content="Vorname:"></Label>
+        <Label Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" Content="Nachname:"></Label>
+        <Label Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" Content="Handynummer:"></Label>
+        <Label Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" Content="Emailadresse:"></Label>
+        <Label Grid.Column="2" Grid.Row="8" VerticalAlignment="Center" Content="Telefonnummer:"></Label>    
+
+        <TextBlock Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Name="tblcustomizeDelivererANummer" TextAlignment="Justify" Text="{Binding LAnsprechpartner.AnprechPartnerNummer}">
+            <TextBlock.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <ComboBox Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" Name="cobxcustomizeDelivererAAnrede">
+            <ComboBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="Herr" Name="cobxcustomizeDelivererAAnredeH">
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+            <ComboBoxItem Content="Frau" Name="cobxcustomizeDelivererAAnredeF">
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+            <ComboBoxItem IsSelected="True" Content="Sonstiges" Name="cobxcustomizeDelivererAAnredeS">
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBox MaxLength="500" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Name="tbxcustomizeDelivererAVorname" TextAlignment="Justify" Text="{Binding LAnsprechpartner.AnspVorname}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="500" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" Name="tbxcustomizeDelivererANachname" TextAlignment="Justify" Text="{Binding LAnsprechpartner.AnspNachname}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="18" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" Name="tbxcustomizeDelivererAHandynummer" TextAlignment="Justify" Text="{Binding LAnsprechpartner.AnpsHandyNummer}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" Name="tbxcustomizeDelivererAEmail" TextAlignment="Justify" Text="{Binding LAnsprechpartner.AnspEmail}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="18" Grid.Column="3" Grid.Row="8" VerticalAlignment="Center" Name="tbxcustomizeDelivererATELNummer" TextAlignment="Justify" Text="{Binding LAnsprechpartner.AnspTelefonnummer}">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+
+        <Button Content="Lieferer bearbeiten" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="10" VerticalAlignment="Center" Name="btncustomizeDeliverer" ToolTip="Verändert die geänderten Daten in der Datenbank" IsEnabled="False" Click="BtncustomizeDeliverer_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Zurück" Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" Grid.ColumnSpan="2" Name="btncustomizeDelivererback" Click="BtncustomizeDelivererback_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

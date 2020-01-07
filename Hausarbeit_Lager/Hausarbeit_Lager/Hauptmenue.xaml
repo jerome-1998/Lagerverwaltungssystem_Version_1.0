@@ -1,0 +1,45 @@
+﻿<Page x:Class="Hausarbeit_Lager.Hauptmenue"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="Hauptmenue" FontSize="30">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid>
+        <StackPanel>
+            <Label Content="Hauptmenü" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40"></Label>
+            <Button Content="Anmelden" Width="200" Margin="0 100 0 0" Name="btnstart" Click="btnstart_Click" FontSize="30">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Registrieren" VerticalAlignment="Center" Width="200" Name="btnreg" Click="Btnreg_Click" Margin="0 100 0 0">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Beenden" VerticalAlignment="Center" Width="200" Name="btnend" Click="Btnend_Click" Margin="0 100 0 0">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>                
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

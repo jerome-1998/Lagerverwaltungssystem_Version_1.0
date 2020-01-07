@@ -1,0 +1,79 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.goodsReceipt"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="goodsReceipt" Loaded="Page_Loaded">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Name="ParentGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label FontSize="40" Content="Lagereingang erfassen" Grid.ColumnSpan="2"></Label>
+        <GroupBox Header="Lieferer" FontSize="30" Grid.Row="1">
+            <ListBox DisplayMemberPath="LiefererName" FontSize="30" SelectionChanged="Lbxgoodsreceiptgoods_SelectionChanged" ItemsSource="{Binding }" IsSynchronizedWithCurrentItem="True" Name="lbxgoodsreceiptdeliverer">
+                <ListBox.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+            </ListBox>
+        </GroupBox>
+
+        <GroupBox FontSize="30" Grid.Column="1" Grid.Row="1" Header="Artikel">
+            <ListBox DisplayMemberPath="ProduktName" FontSize="30" SelectionChanged="Lbxgoodsreceiptgoods_SelectionChanged" ItemsSource="{Binding Produkte}" IsSynchronizedWithCurrentItem="True" Name="lbxgoodsreceiptgoods">
+                <ListBox.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+            </ListBox>
+        </GroupBox>
+
+        <Label Content="gelieferte Menge:" Grid.Column="0" Grid.Row="2" FontSize="30"></Label>
+        <TextBox MaxLength="10" FontSize="30" Grid.Column="0" Grid.Row="3" Name="tbxgoodsreceiptdelivered" VerticalAlignment="Top" Margin="0 0 0 10" TextChanged="Tbxgoodsreceiptdelivered_TextChanged">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Button FontSize="30" Content="Lagereingang erfassen" IsEnabled="False" Name="btngoodsreceipt" Grid.Column="1" Grid.Row="4" VerticalAlignment="Top" Click="Btngoodsreceipt_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button FontSize="30" Grid.Column="0" Grid.Row="4" Content="Zurück" VerticalAlignment="Top" Name="btngoodsreceiptback" Click="Btngoodsreceiptback_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

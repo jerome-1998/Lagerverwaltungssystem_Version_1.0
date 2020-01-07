@@ -1,0 +1,76 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.deleteDeliverer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="deleteDeliverer" Loaded="Page_Loaded" FontSize="30">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Name="ParentGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" FontSize="40" Content="Lieferer löschen"></Label>
+        <DataGrid Grid.Row="1" FontSize="20" AutoGenerateColumns="False" ItemsSource="{Binding }" IsReadOnly="True" Name="dgdeletedeliverlist">
+            <DataGrid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Lieferer ID" Width="*" Binding="{Binding LiefererNR}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lieferer Name" Width="*" Binding="{Binding LiefererName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lieferer Website" Width="*" Binding="{Binding Website}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Adresse" Width="*" Binding="{Binding Adresse}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lieferer Ansprechpartner" Width="*" Binding="{Binding LAnsprechpartner.AnspNachname}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Suche:"></Label>
+            <TextBox MaxLength="150" Margin="0 10" Grid.Row="1" Grid.ColumnSpan="2" Name="tbxdeletedeliverersearch" TextChanged="Tbxdeletedeliverersearch_TextChanged">
+                <TextBox.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <Button Grid.Row="2" Grid.Column="0" Content="Löschen" VerticalAlignment="Top" Name="btndeletedelivererdelete" Click="Btndeletedelivererdelete_Click">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="1" Content="Zurück" VerticalAlignment="Top" Name="btndeletedelivererback" Click="Btndeletedelivererback_Click">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

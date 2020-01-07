@@ -1,0 +1,79 @@
+﻿<Page x:Class="Hausarbeit_Lager.Registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="Registration" FontSize="30">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--Überschrift-->
+        <Label Content="Registrieren" FontSize="40" HorizontalAlignment="Center" Grid.ColumnSpan="2"></Label>
+        
+
+        <Label Content="Benutzername:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></Label>
+        <Label Content="Passwort:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></Label>
+        <Label Content="Passwort wiederholen:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></Label>
+
+        
+        <TextBox MaxLength="250" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="30" Name="tbxregnickname" Height="40">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <PasswordBox MaxLength="50" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontSize="30" Name="pwbxregpassword" Height="40">
+            <PasswordBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </PasswordBox.Background>
+        </PasswordBox>
+        <PasswordBox MaxLength="50" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" FontSize="30" Name="pwbxregpasswordtwo" Height="40">
+            <PasswordBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </PasswordBox.Background>
+        </PasswordBox>
+        <Button Content="Abbrechen" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" FontSize="30" Name="btnregcancel" Click="btnregcancel_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Annehmen" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Name="btnregaccept" Click="btnregaccept_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

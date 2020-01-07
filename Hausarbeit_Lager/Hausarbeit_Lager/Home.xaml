@@ -1,0 +1,239 @@
+﻿<Page x:Class="Hausarbeit_Lager.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="Home" FontSize="20">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Name="gridhome">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" Grid.ColumnSpan="2" Name="menuhome" FontSize="15">
+            <MenuItem Header="Profil" Name="mihomedata">
+                <MenuItem Header="Passwort ändern" Name="mihomechangePW" Click="MihomechangePW_Click"></MenuItem>
+                <MenuItem Header="Abmelden" Name="mihomeexit" Click="Mihomeexit_Click"></MenuItem>
+                <MenuItem Header="Programm beenden" Name="mihomeclose" Click="Mihomeclose_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBlock Grid.Row="1" Visibility="Collapsed" Name="tblloginas"></TextBlock>
+        <TabControl Grid.Row="2" Name="tabcontrolhome" BorderThickness="0">
+            <TabControl.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+                    <GradientStop Color="AntiqueWhite"></GradientStop>
+                </LinearGradientBrush>
+            </TabControl.Background>
+            <TabItem Header="Kunden" Name="tihomecustomer">
+                <Grid Name="ParentGridKunde" Height="600" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Height="100" Width="400" Grid.Column="0" Grid.Row="0" Content="Kunden anzeigen" Name="btnhomeshowcustomer" Click="Btnhomeshowcustomer_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Column="1" Grid.Row="0" Content="Kunde hinzufügen" Name="btnhomenewcustomer" Click="Btnhomenewcustomer_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Column="0" Grid.Row="1" Content="Kundendaten löschen" Name="btnhomedeletecustomer" Click="Btnhomedeletecustomer_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Column="1" Grid.Row="1" Content="Kundendaten anpassen" Name="btnhomechangecustomer" Click="Btnhomechangecustomer_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Content="Kunde Produkte zuweisen" Name="btnhomecustomerproducts" Click="Btnhomecustomerproducts_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Lieferer" Name="tihomedeliverer">
+                <Grid VerticalAlignment="Top" Height="600" Name="gridhomedeliverer">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Height="100" Width="400" Grid.Row="0" Grid.Column="0" Content="Lieferanten anzeigen" Name="btnhomedelieverer" Click="Btnhomedelieverer_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="0" Grid.Column="1" Content="Lieferant hinzufügen" Name="btnhomenewdelieverer" Click="Btnhomenewdelieverer_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="1" Grid.Column="0" Content="Liefererdaten löschen" Name="btnhomedeletedeliverer" Click="Btnhomedeletedeliverer_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="1" Grid.Column="1" Content="Liefererdaten anpassen" Name="btnhomechangedeliverer" Click="Btnhomechangedeliverer_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Content="Lieferer Produkte zuweisen" Name="btnhomedelivererproducts" Click="Btnhomedelivererproducts_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Produkte" Name="tihomegoods">
+                <Grid VerticalAlignment="Top" Height="600" Name="gridhomegoods">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Height="100" Width="400" Grid.Row="0" Grid.Column="0" Content="Lagerbestand anzeigen" Name="btnhometotalstock" Click="btnhometotalstock_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="0" Grid.Column="1" Content="Produkt hinzufügen" Name="btnhomeaddnewgoods" Click="Btnhomeaddnewgoods_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="1" Grid.Column="0" Content="Produkte löschen" Name="btnhomedeleteproducts" Click="Btnhomedeleteproducts_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="1" Grid.Column="1" Content="Produktdaten anpassen" Name="btnhomechangegoods" Click="Btnhomechangegoods_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Mindestbestände festlegen" Name="btnhomeleastwas" Click="btnhomeleastwas_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Lager" Name="tihomechangedata" VerticalAlignment="Top">
+                <Grid Height="400" VerticalAlignment="Top" Name="gridhomechangedata">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Height="100" Width="400" Grid.Row="0" Grid.Column="0" Content="Lagereingang" Name="btnhomeorderdeliver" Click="Btnhomeorderdeliver_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="0" Grid.Column="1" Content="Lagerausgang" Name="btnhomeordersend" Click="Btnhomeordersend_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Height="100" Width="400" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Lagerbewegungen Übersicht" Name="btnhomeuebersicht" Click="Btnhomeuebersicht_Click">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                                <GradientStop Color="Lime"></GradientStop>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

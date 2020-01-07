@@ -1,0 +1,54 @@
+﻿<Window x:Class="Hausarbeit_Lager.Funktionen.ShowLAnsprechpartner"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+        mc:Ignorable="d"
+        Title="ShowLAnsprechpartner" Height="700" Width="800" WindowState="Normal" WindowStyle="ToolWindow" ResizeMode="CanResize" FontSize="30" Loaded="Window_Loaded">
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Name="ParentGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="Ansprechpartner:" FontSize="40"></Label>
+        <Label Grid.Column="1" Content="{Binding LiefererName}" FontSize="40"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Content="Anrede:"></Label>
+        <Label Grid.Row="1" Grid.Column="1" Content="{Binding LAnsprechpartner.AnspAnrede}"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Content="Vorname:"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Content="{Binding LAnsprechpartner.AnspVorname}"></Label>
+        <Label Grid.Row="3" Grid.Column="0" Content="Nachname:"></Label>
+        <Label Grid.Row="3" Grid.Column="1" Content="{Binding LAnsprechpartner.AnspNachname}"></Label>
+        <Label Grid.Row="4" Grid.Column="0" Content="Handynummer:"></Label>
+        <Label Grid.Row="4" Grid.Column="1" Content="{Binding LAnsprechpartner.AnpsHandyNummer}"></Label>
+        <Label Grid.Row="5" Grid.Column="0" Content="Telefonnummer:"></Label>
+        <Label Grid.Row="5" Grid.Column="1" Content="{Binding LAnsprechpartner.AnspTelefonnummer}"></Label>
+        <Label Grid.Row="6" Grid.Column="0" Content="Email:"></Label>
+        <Label Grid.Row="6" Grid.Column="1" Content="{Binding LAnsprechpartner.AnspEmail}"></Label>
+        <Button Grid.Row="7" Grid.Column="0" Content="Zurück" VerticalAlignment="Center" Name="btnlaback" Click="Btnlaback_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

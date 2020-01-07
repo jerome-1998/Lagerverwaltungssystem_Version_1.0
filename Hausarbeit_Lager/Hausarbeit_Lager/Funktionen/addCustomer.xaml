@@ -1,0 +1,226 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.addCustomer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="addCustomer" FontSize="30">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Label Content="Kunde in System hinzufügen!" FontSize="40" Grid.ColumnSpan="4"></Label>
+
+        <Label Content="Kunden Daten" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2"></Label>
+        <Label Content="Kundennummer:*" Grid.Row="2" VerticalAlignment="Center"></Label>
+        <Label Content="Firmenname:*" Grid.Row="3" VerticalAlignment="Center"></Label>
+        <Label Content="PLZ:" Grid.Row="4" VerticalAlignment="Center"></Label>
+        <Label Content="Addresse:" Grid.Row="5" VerticalAlignment="Center"></Label>
+        <Label Content="Ort:" Grid.Row="6" VerticalAlignment="Center"></Label>
+        <Label Content="Telefonnummer:" Grid.Row="7" VerticalAlignment="Center"></Label>
+        <Label Content="Emailaddresse:" Grid.Row="8" VerticalAlignment="Center"></Label>
+        <Label Content="Website:" Grid.Row="9" VerticalAlignment="Center"></Label>
+
+
+        <TextBox MaxLength="9" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Name="tbxaddCustomerKNummer" TextAlignment="Justify" TextChanged="TbxaddCustomerANummer_TextChanged">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Name="tbxaddCustomerKName" TextAlignment="Justify" TextChanged="TbxaddCustomerANummer_TextChanged">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="20" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="tbxaddCustomerKPLZ" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="200" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Name="tbxaddCustomerKAddresse" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Name="tbxaddCustomerKOrt" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="18" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Name="tbxaddCustomerKTelefon" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" Name="tbxaddCustomerKEmail" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" Name="tbxaddCustomerKWebsite" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+
+
+        <Label Grid.Column="2" Grid.Row="1" Content="Ansprechpartner" Grid.ColumnSpan="2" FontWeight="Bold"></Label>
+        <Label Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Content="AnsprechpartnerID:*"></Label>
+        <Label Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Content="Anrede:"></Label>
+        <Label Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" Content="Vorname:"></Label>
+        <Label Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" Content="Nachname:"></Label>
+        <Label Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" Content="Handynummer:"></Label>
+        <Label Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" Content="Emailaddresse:"></Label>
+        <Label Grid.Column="2" Grid.Row="8" VerticalAlignment="Center" Content="Telfonnummer:"></Label>
+
+        <TextBox MaxLength="9" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" Name="tbxaddCustomerANummer" TextAlignment="Justify" TextChanged="TbxaddCustomerANummer_TextChanged">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" Name="cobxaddCustomerAAnrede">
+            <ComboBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="Herr" Name="cobxaddCustomerAAnredeH">
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+            <ComboBoxItem Content="Frau" Name="cobxaddCustomerAAnredeF">
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+            <ComboBoxItem IsSelected="True" Content="Sonstiges" Name="cobxaddCustomerAAnredeS">
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBox MaxLength="500" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" Name="tbxaddCustomerAVorname" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="500" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" Name="tbxaddCustomerANachname" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="18" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" Name="tbxaddCustomerAHandynummer" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="250" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" Name="tbxaddCustomerAEmail" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox MaxLength="18" Grid.Column="3" Grid.Row="8" VerticalAlignment="Center" Name="tbxaddCustomerATelNummer" TextAlignment="Justify">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        
+        <Button Content="Kunde hinzufügen" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="10" VerticalAlignment="Center" Name="btnaddCustomeradd" Click="BtnaddCustomeradd_Click" ToolTip="Fügt den Kunden in das System ein wenn alle PflichtFelder ausgefüllt sind!" IsEnabled="False">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        
+        <Button Content="Zurück" Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" Grid.ColumnSpan="2" Name="btnaddCustomerback" Click="BtnaddCustomerback_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

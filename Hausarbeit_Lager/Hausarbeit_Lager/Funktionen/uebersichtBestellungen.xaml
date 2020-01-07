@@ -1,0 +1,76 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.uebersichtBestellungen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="uebersichtBestellungen" FontSize="30" Loaded="Page_Loaded">
+    
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label FontSize="40" Content="Übersicht"></Label>
+        <Label Grid.Row="1" Content="Lagereingänge"></Label>
+        <DataGrid Grid.Row="2" ItemsSource="{Binding }" Name="dggoodsreceipt" FontSize="20" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"></EventSetter>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding WareneingangID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lieferer" Binding="{Binding Lieferer1.LiefererName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Produkt" Binding="{Binding Waren.Produkte.ProduktName}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Grid.Row="3" Content="Lagerausgänge"></Label>
+        <DataGrid Grid.Row="4" ItemsSource="{Binding}" Name="dggoodsissue" IsReadOnly="True" FontSize="20" AutoGenerateColumns="False">
+            <DataGrid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick_1"></EventSetter>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="ID" Binding="{Binding WarenausgangID}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Kunde" Binding="{Binding Kunde1.KundenName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Produkt" Binding="{Binding Waren.Produkte.ProduktName}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="5" Content="Zurück" VerticalAlignment="Center" Margin="0 10" Name="btnback" Click="Btnback_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

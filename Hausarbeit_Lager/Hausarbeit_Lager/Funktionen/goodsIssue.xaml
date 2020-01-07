@@ -1,0 +1,80 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.goodsIssue"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="goodsIssue" Loaded="Page_Loaded" FontSize="30">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Name="ParentGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="Lagerausgang erfassen" FontSize="40" Grid.ColumnSpan="2"></Label>
+        <GroupBox Name="gbxgoodsissuecustomer" Grid.Column="0" Grid.Row="1" Header="Kunde" FontSize="30">
+            <ListBox DisplayMemberPath="KundenName" FontSize="30" SelectedIndex="0" ItemsSource="{Binding }" Name="lbxgoodsissuecustomer" IsSynchronizedWithCurrentItem="True">
+                <ListBox.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+            </ListBox>
+        </GroupBox>
+        <GroupBox Name="gbxgoodsissuegoods" Grid.Column="1" Grid.Row="1" Header="Artikel" FontSize="30">
+            <ListBox DisplayMemberPath="ProduktName" FontSize="30" SelectedIndex="0" SelectionChanged="Lbxgoodsissuegoods_SelectionChanged" ItemsSource="{Binding Produkte}" Name="lbxgoodsissuegoods" IsSynchronizedWithCurrentItem="True">
+                <ListBox.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+            </ListBox>
+        </GroupBox>
+
+        <Label FontSize="30" Content="Warenmenge:" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top"></Label>
+
+        <TextBox MaxLength="10" FontSize="30" Grid.Column="0" Grid.Row="3" Name="tbxgoodsissueamount" VerticalAlignment="Center" TextChanged="Tbxgoodsissueamount_TextChanged">
+            <TextBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+
+        <Button Click="Btngoodsissue_Click" Content="Lagerausgang buchen" Grid.Column="1" Grid.Row="3" Name="btngoodsissue" IsEnabled="False" VerticalAlignment="Center" Height="45" FontSize="30">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="4" FontSize="30" Click="Btngoodsissueback_Click" Content="Zurück" VerticalAlignment="Center" Name="btngoodsissueback">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Page>

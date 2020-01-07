@@ -1,0 +1,67 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.DelivererProducts"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="DelivererProducts" FontSize="30" Loaded="Page_Loaded">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Grid Name="ParentGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label FontSize="40" Content="Lieferer Produkt zuweisen"></Label>
+        <Label Content="Wähle Lieferer: " Grid.Row="1" VerticalAlignment="Center"></Label>
+        <ComboBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" ItemsSource="{Binding }" DisplayMemberPath="LiefererName" Name="cbxdeliverer" SelectionChanged="Comboboxproduct_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Content="Wähle Produkt:"></Label>
+        <ComboBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" ItemsSource="{Binding }" DisplayMemberPath="ProduktName" Name="comboboxproduct" SelectionChanged="Comboboxproduct_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        
+
+        <Button Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Content="Zurück" Name="btnback" Click="Btnback_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Content="Prudukt Lieferer hinzufügen" Name="btnproducttodeliverer" Click="Btnproducttodeliverer_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

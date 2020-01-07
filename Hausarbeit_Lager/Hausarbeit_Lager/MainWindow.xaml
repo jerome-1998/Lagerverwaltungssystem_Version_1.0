@@ -1,0 +1,27 @@
+﻿<Window x:Class="Hausarbeit_Lager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hausarbeit_Lager"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowStyle="ThreeDBorderWindow" WindowState="Maximized" ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" Name="mainframe" NavigationUIVisibility="Hidden"></Frame>
+        <TextBlock HorizontalAlignment="Left" Grid.Row="1" Name="TimeText"></TextBlock>
+        
+    </Grid>
+</Window>

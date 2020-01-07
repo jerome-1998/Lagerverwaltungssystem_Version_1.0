@@ -1,0 +1,59 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.customizeCustomer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="customizeCustomer" Loaded="Page_Loaded" FontSize="30">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Name="ParentGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Wähle Kunde aus" FontSize="40"></Label>
+        <DataGrid FontSize="20" ItemsSource="{Binding}" Grid.ColumnSpan="2" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Name="dgcustomizecustomer">
+            <DataGrid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"></EventSetter>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kundennummer" Binding="{Binding KundenNr}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Kundenname" Binding="{Binding KundenName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Website" Binding="{Binding Website}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ansprechpartner Email-Adresse" Binding="{Binding KAnsprechpartner.AnspEmail}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="zurück" Grid.Column="0" Grid.Row="2" Margin="0 50" VerticalAlignment="Center" Grid.ColumnSpan="2" Name="btncustomizecustomerback" Click="Btncustomizecustomerback_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Page>

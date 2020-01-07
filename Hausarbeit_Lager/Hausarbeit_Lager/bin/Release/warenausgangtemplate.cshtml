@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+@using Hausarbeit_Lager.Funktionen;
+<html>
+<head>
+    <title>Warenausgang</title>
+    <meta charset="utf-8" lang="de" />
+    <style>
+        .Firmendaten {
+            margin-top: 15%;
+            float: left;
+        }
+
+        .Datum {
+            margin-top: 15%;
+            float: right;
+        }
+
+        .Clear {
+            clear: both;
+        }
+
+        .Waren {
+            margin-top: 30%;
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: right;
+        }
+
+        table, td, th {
+            border: 2px solid;
+            border-collapse: collapse;
+        }
+
+        .sum {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Warenausgang</h1>
+
+    <div class="Firmendaten">
+        @{
+            int KundenNr= @Model.Kunde;
+        }
+        <p>@TempCust.GetCustomerName(KundenNr)</p>
+        <p>@KundenNr</p>
+        <p>@TempCust.GetCustomerAdresse(KundenNr)</p>
+        <p>@TempCust.GetOrtPlz(KundenNr)</p>
+    </div>
+
+    <div class="Datum">
+        <p>@TempCust.GetNow()</p>
+    </div>
+    <div class="Clear">
+
+    </div>
+    <div style="text-align:right;" align="center" valign="center">
+        <table class="Waren">
+            <tr>
+                <th>Bezeichnung</th>
+                <th>Menge</th>
+                <th>Wert</th>
+            </tr>
+            <tr>
+                @{
+                    int ArtNr = @Model.Artikel;
+                    int BesMen=@Model.Bestellmenge;
+                }
+                <td>@TempCust.GetProductName(ArtNr)</td>
+                <td>@BesMen</td>
+                <td>@TempCust.GetProductValue(ArtNr)</td>
+            </tr>
+            <tr>
+                <td class="sum" colspan="3">@TempCust.GetSum(BesMen,TempCust.GetProductValue(ArtNr))</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>					

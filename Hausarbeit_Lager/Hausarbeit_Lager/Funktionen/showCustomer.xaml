@@ -1,0 +1,86 @@
+﻿<Page x:Class="Hausarbeit_Lager.Funktionen.showCustomer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hausarbeit_Lager.Funktionen"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="showCustomer" Loaded="Page_Loaded" FontSize="30">
+    <Page.Background>
+        <LinearGradientBrush>
+            <GradientStop Color="Aqua" Offset="1.0"></GradientStop>
+            <GradientStop Color="AntiqueWhite"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Name="ParentGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="Alle Kunden anzeigen" FontSize="40" Grid.ColumnSpan="2"></Label>
+        
+        <DataGrid FontSize="20" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2" Name="dgshowcustomer" ItemsSource="{Binding }" AutoGenerateColumns="False" IsReadOnly="True" IsSynchronizedWithCurrentItem="True">
+            <DataGrid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                    <GradientStop Color="Lime"></GradientStop>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"></EventSetter>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="auto" Header="Kunden ID" Binding="{Binding KundenNr}"></DataGridTextColumn>
+                <DataGridTextColumn Width="auto" Header="Kunden Name" Binding="{Binding KundenName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="PLZ" Binding="{Binding PLZ}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Adresse" Binding="{Binding Adresse}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Ort" Binding="{Binding Ort}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Telefonnummer" Binding="{Binding Telefonnummer}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Emailadresse" Binding="{Binding EmailaddresseBetrieb}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Website" Binding="{Binding Website}"></DataGridTextColumn>
+                <DataGridTextColumn Width="auto" Header="Ansprechpartner Nachname" Binding="{Binding KAnsprechpartner.AnspNachname}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label>Suche:</Label>
+            <TextBox MaxLength="150" Height="40" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="tbxshowcustomersearch" TextChanged="Tbxshowcustomersearch_TextChanged">
+                <TextBox.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <Button Height="40" VerticalAlignment="Top" Grid.Row="1" Grid.Column="2" Name="btnshowcustomerback" Click="Btnshowcustomerback_Click" Content="Zurück">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Azure" Offset="0.7"></GradientStop>
+                        <GradientStop Color="Lime"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+    </Grid>
+</Page>
